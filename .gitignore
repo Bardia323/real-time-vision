@@ -4,3 +4,4 @@ __pycache__
 /outputs/
 result.png
 settings.json
+/chunks/

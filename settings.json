@@ -1,8 +1,8 @@
 {
-    "prompt": "high-quality portrait",
-    "negative_prompt": "bad blurry ugly",
-    "guidance_scale": 5,
-    "num_inference_steps": 30,
+    "prompt": "clowns at the Venice beach",
+    "negative_prompt": "",
+    "guidance_scale": 8,
+    "num_inference_steps": 15,
     "width": 1024,
-    "height": 1024
+    "height": 576
 }
