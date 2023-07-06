@@ -3,3 +3,4 @@ config.json
 __pycache__
 /outputs/
 result.png
+settings.json
