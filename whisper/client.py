@@ -18,7 +18,14 @@ CHANNELS = 1
 RATE = 16000
 RECORD_SECONDS = 60000
 
-
+def replace_prompt(new_prompt):
+    with open('settings.json', 'r') as f:
+        settings = json.load(f)
+        
+    settings['prompt'] = new_prompt
+        
+    with open('settings.json', 'w') as f:
+        json.dump(settings, f, indent=4)
 
 def on_message(ws, message):
     message = json.loads(message)
@@ -38,6 +45,7 @@ def on_message(ws, message):
     os.system('clear')
     for element in word_list:
         print(element)
+    replace_prompt(" ".join(word_list))
 
 def on_error(ws, error):
     print(error)

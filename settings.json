@@ -1,6 +1,6 @@
 {
-    "prompt": "clowns at the Venice beach",
-    "negative_prompt": "",
+    "prompt": " Actually alone again. Naturally.",
+    "negative_prompt": "text, words",
     "guidance_scale": 8,
     "num_inference_steps": 15,
     "width": 1024,

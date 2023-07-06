@@ -47,13 +47,13 @@ EOL
 # Update the file permissions so it's executable
 chmod +x ~/Desktop/image-polling.desktop
 
-# image-polling
+# whisper-server
 cat > ~/Desktop/whisper-server.desktop << EOL
 [Desktop Entry]
 Version=1.0
 Name=whisper-server
 Comment=Launch Whisper Server
-Exec=gnome-terminal --working-directory=$REPO_PATH -e "bash -c 'source venv/bin/activate; python python whisper/server.py; exec bash'"
+Exec=gnome-terminal --working-directory=$REPO_PATH -e "bash -c 'source venv/bin/activate; python whisper/server.py; exec bash'"
 Icon=$REPO_PATH/icons/blue_sphere.png
 Terminal=true
 Type=Application
@@ -62,6 +62,22 @@ EOL
 
 # Update the file permissions so it's executable
 chmod +x ~/Desktop/whisper-server.desktop
+
+# whisper-client
+cat > ~/Desktop/whisper-client.desktop << EOL
+[Desktop Entry]
+Version=1.0
+Name=whisper-client
+Comment=Launch Whisper Client
+Exec=gnome-terminal --working-directory=$REPO_PATH -e "bash -c 'source venv/bin/activate; python whisper/client.py --host localhost --port 9090; exec bash'"
+Icon=$REPO_PATH/icons/blue_sphere.png
+Terminal=true
+Type=Application
+Categories=Application;
+EOL
+
+# Update the file permissions so it's executable
+chmod +x ~/Desktop/whisper-client.desktop
 
 # webui
 cat > ~/Desktop/webui.desktop << EOL
