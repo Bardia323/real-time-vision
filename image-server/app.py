@@ -5,7 +5,7 @@ import asyncio
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import ValidationError
-from diffusers import DiffusionPipeline
+from diffusers.pipelines.pipeline_utils import DiffusionPipeline
 import ray
 import torch
 from .config import DeforumConfig
@@ -40,20 +40,24 @@ class ImageGenerator:
                 torch_dtype=config.torch_dtype
         )
 
-        # Optional Optimizations
-        if config.compile_unet:
-            self.pipeline.unet = torch.compile(self.pipeline.unet, mode="reduce-overhead", fullgraph=True)
-        if config.enable_xformers_memory_efficient_attention:
-            self.pipeline.enable_xformers_memory_efficient_attention()
-        if config.enable_attention_slicing:
-            self.pipeline.enable_attention_slicing()
+        # Move the pipeline to the GPU (or cpu) 
+        self.pipeline = self.pipeline.to(config.torch_device)
 
         # Optimizations
         self.pipeline.unet.to(memory_format=torch.channels_last)
         self.pipeline.vae.to(memory_format=torch.contiguous_format)
 
-        # Move the pipeline to the GPU (or cpu) 
-        self.pipeline = self.pipeline.to(config.torch_device)
+        # enable attention slicing
+        if config.enable_attention_slicing:
+            self.pipeline.enable_attention_slicing()
+
+        # enable xformers
+        if config.enable_xformers_memory_efficient_attention:
+            self.pipeline.enable_xformers_memory_efficient_attention()
+
+        # compile unet
+        #if config.compile_unet:
+        #    self.pipeline.unet = torch.compile(self.pipeline.unet, mode="reduce-overhead", fullgraph=True)
         
     def generate(self, args: DeforumArgs):
         args_dict = args.dict()

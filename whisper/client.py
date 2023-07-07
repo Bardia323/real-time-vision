@@ -45,7 +45,7 @@ def on_message(ws, message):
     os.system('clear')
     for element in word_list:
         print(element)
-    replace_prompt(" ".join(word_list))
+    replace_prompt(" ".join(word_list).strip())
 
 def on_error(ws, error):
     print(error)
