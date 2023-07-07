@@ -4,7 +4,7 @@ import json
 import base64
 import time
 
-n = 0.2  # number of seconds to wait between requests
+n = 0.1  # number of seconds to wait between requests
 
 while True:
 
@@ -21,7 +21,7 @@ while True:
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         print(f"Request failed due to an error: {e}")
-        break
+        time.sleep(5)
 
     # save returned image
     try:
@@ -30,7 +30,7 @@ while True:
             f.write(img_data)
     except Exception as e:
         print(f"Failed to save image due to error: {e}")
-        break
+        time.sleep(5)
 
     # end
     end_time = time.time()
