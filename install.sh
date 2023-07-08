@@ -6,6 +6,9 @@ python -m venv venv
 # activate the virtual environment
 source venv/bin/activate
 
+# install pytorch
+pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
+
 # install necessary packages
 python -m pip install -r requirements.txt
 
