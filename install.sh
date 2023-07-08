@@ -13,18 +13,18 @@ pip3 install --pre torch torchvision torchaudio --index-url https://download.pyt
 python -m pip install -r requirements.txt
 
 # setup config
-python image-server/config.py
+python diffusers-server/config.py
 
 # create desktop shortcuts
 REPO_PATH=$(pwd)
 
-# image-server
-cat > ~/Desktop/image-server.desktop << EOL
+# diffusers-server
+cat > ~/Desktop/diffusers-server.desktop << EOL
 [Desktop Entry]
 Version=1.0
-Name=image-server
-Comment=Launch Image Server
-Exec=gnome-terminal --working-directory=$REPO_PATH -- bash $REPO_PATH/launch-image-server.sh
+Name=diffusers-server
+Comment=Launch Diffusers Server
+Exec=gnome-terminal --working-directory=$REPO_PATH -- bash $REPO_PATH/launch-diffusers-server.sh
 Icon=$REPO_PATH/icons/red_cube.png
 Terminal=true
 Type=Application
@@ -32,16 +32,16 @@ Categories=Application;
 EOL
 
 # Update the file permissions so it's executable
-chmod +x launch-image-server.sh
-chmod +x ~/Desktop/image-server.desktop
+chmod +x launch-diffusers-server.sh
+chmod +x ~/Desktop/diffusers-server.desktop
 
-# image-polling
-cat > ~/Desktop/image-polling.desktop << EOL
+# diffusers-polling
+cat > ~/Desktop/diffusers-polling.desktop << EOL
 [Desktop Entry]
 Version=1.0
-Name=image-polling
-Comment=Launch Image Polling
-Exec=gnome-terminal --working-directory=$REPO_PATH -- bash $REPO_PATH/launch-image-polling.sh
+Name=diffusers-polling
+Comment=Launch Diffusers Polling
+Exec=gnome-terminal --working-directory=$REPO_PATH -- bash $REPO_PATH/launch-diffusers-polling.sh
 Icon=$REPO_PATH/icons/red_cube.png
 Terminal=true
 Type=Application
@@ -49,8 +49,8 @@ Categories=Application;
 EOL
 
 # Update the file permissions so it's executable
-chmod +x launch-image-polling.sh
-chmod +x ~/Desktop/image-polling.desktop
+chmod +x launch-diffusers-polling.sh
+chmod +x ~/Desktop/diffusers-polling.desktop
 
 # whisper-server
 cat > ~/Desktop/whisper-server.desktop << EOL
@@ -102,6 +102,23 @@ EOL
 # Update the file permissions so it's executable
 chmod +x launch-webui.sh
 chmod +x ~/Desktop/webui.desktop
+
+# display
+cat > ~/Desktop/display.desktop << EOL
+[Desktop Entry]
+Version=1.0
+Name=display
+Comment=Launch Display
+Exec=gnome-terminal --working-directory=$REPO_PATH -- bash $REPO_PATH/launch-display.sh
+Icon=$REPO_PATH/icons/yellow_cone.png
+Terminal=true
+Type=Application
+Categories=Application;
+EOL
+
+# Update the file permissions so it's executable
+chmod +x launch-display.sh
+chmod +x ~/Desktop/display.desktop
 
 # dreambooth
 cat > ~/Desktop/real-time-vision.desktop << EOL
