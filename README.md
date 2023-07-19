@@ -63,3 +63,45 @@ bash launch-image-server.sh
 ```
 bash launch-webui.sh
 ```
+
+## Windows Setup
+
+For Windows users, follow these steps to set up and run the Real-Time-Vision system:
+
+### Step 1: Install PyTorch
+
+Before proceeding, make sure to install the appropriate version of PyTorch for your system. You can find the installation instructions on the PyTorch official website: https://pytorch.org/get-started/locally/
+
+### Step 2: Run install-windows.cmd
+
+Clone the repository onto your local machine using the following command:
+
+```
+git clone https://github.com/deforum/real-time-vision.git
+```
+
+Then, navigate to the cloned directory:
+
+```
+cd real-time-vision
+```
+
+To install necessary packages and set up your environment, run the `install-windows.cmd` script:
+
+```
+install-windows.cmd
+```
+
+### Step 3: Initialize settings.json and config.json
+
+Initialize your `settings.json` and `config.json` files in the `win-scripts` directory. These files should contain the appropriate configuration details required for the applications to run correctly.
+
+### Step 4: Run launch-real-time-vision-windows.bat
+
+Launch the Real-Time-Vision applications in the correct order by running the `launch-real-time-vision-windows.bat` script:
+
+```
+launch-real-time-vision-windows.bat
+```
+
+Now, the Real-Time-Vision system should be up and running on your Windows machine.
