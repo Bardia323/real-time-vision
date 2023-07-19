@@ -1,6 +1,7 @@
 # Real-Time-Vision
 
 This is a repository for Real-Time-Vision.
+
 Real-Time-Vision is a practical and intriguing system that uses machine learning to turn spoken language into corresponding images in real time. Ideal for data visualization and communication enhancement, this tool offers a novel way to represent verbal information visually.
 
 ## Table of Contents
