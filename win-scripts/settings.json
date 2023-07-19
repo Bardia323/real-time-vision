@@ -1,0 +1,10 @@
+{
+    "prompt": "",
+    "negative_prompt": "",
+    "num_inference_steps": 30,
+    "guidance_scale": 6,
+    "scheduler": "euler_ancestral",
+    "return_image_as_bytes": false,
+    "width": 960,
+    "height": 512
+}

@@ -1,0 +1,10 @@
+{
+    "torch_device": "cuda",
+    "torch_dtype": "float16",
+    "model_path": "stabilityai/stable-diffusion-xl-base-0.9",
+    "num_gpus": 1,
+    "num_workers_per_gpu": 1,
+    "enable_attention_slicing": true,
+    "enable_xformers_memory_efficient_attention": false,
+    "compile_unet": false
+}
