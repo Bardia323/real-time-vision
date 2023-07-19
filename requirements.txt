@@ -1,5 +1,6 @@
 uvicorn==0.22.0
 fastapi==0.99.1
+typing-extensions==4.7.1
 ray==2.5.1
 psutil==5.9.5
 huggingface-hub==0.16.2
@@ -15,4 +16,6 @@ ffmpeg-python==0.2.0
 PyAudio==0.2.13
 websocket-client==1.6.1
 PyQt5==5.15.9
+trampoline==0.1.2
+boltons==23.0.0
 git+https://github.com/huggingface/diffusers.git
