@@ -73,7 +73,7 @@ bash launch-webui.sh
 ## Installation for Windows
 
 ### Step 1: Install PyTorch
-Before proceeding, make sure to install the appropriate version of PyTorch for your system. You can find the installation instructions on the PyTorch official website: https://pytorch.org/get-started/locally/
+Before proceeding, make sure to replace the PyTorch install line in `install-windows.cmd` to install the appropriate version of PyTorch for your system. You can find the installation command on the PyTorch official website: https://pytorch.org/get-started/locally/
 
 ### Step 2: Log in to Huggingface
 Use the following command:
